@@ -75,51 +75,56 @@
 
 <body>
 
-    <!-- Display consent banner -->
     <div id="consent-banner">
         <p>我們使用 Cookies 來提升您的使用體驗。請同意我們的隱私政策以繼續使用網站。</p>
         <button onclick="consentGranted()">同意</button>
         <button onclick="consentDenied()">不同意</button>
-    </div>
-
-    <script>
+      </div>
+    
+      <script>
+        // Debug: log the consent status
+        console.log("Checking consent status...");
+    
         // Display the consent banner if consent has not been given
         window.onload = function () {
-            if (!localStorage.getItem('consentGiven')) {
-                // Show consent banner if not yet given
-                document.getElementById('consent-banner').style.display = 'block';
-            }
+          if (!localStorage.getItem('consentGiven')) {
+            console.log("Consent not given, showing banner");
+            document.getElementById('consent-banner').style.display = 'block';
+          } else {
+            console.log("Consent already given or denied");
+          }
         }
-
+    
         // Function to handle consent granted
         function consentGranted() {
-            // Update consent for all parameters as granted
-            gtag('consent', 'update', {
-                'ad_storage': 'granted',
-                'ad_user_data': 'granted',
-                'ad_personalization': 'granted',
-                'analytics_storage': 'granted'
-            });
-
-            // Store the consent status
-            localStorage.setItem('consentGiven', 'true');
-            document.getElementById('consent-banner').style.display = 'none';
+          // Update consent for all parameters as granted
+          console.log("Consent granted, updating settings...");
+          gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted',
+            'analytics_storage': 'granted'
+          });
+    
+          // Store the consent status
+          localStorage.setItem('consentGiven', 'true');
+          document.getElementById('consent-banner').style.display = 'none';
         }
-
+    
         // Function to handle consent denied
         function consentDenied() {
-            // Update consent for all parameters as denied
-            gtag('consent', 'update', {
-                'ad_storage': 'denied',
-                'analytics_storage': 'denied'
-            });
-
-            // Store the consent status
-            localStorage.setItem('consentGiven', 'false');
-            document.getElementById('consent-banner').style.display = 'none';
+          // Update consent for all parameters as denied
+          console.log("Consent denied, updating settings...");
+          gtag('consent', 'update', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied'
+          });
+    
+          // Store the consent status
+          localStorage.setItem('consentGiven', 'false');
+          document.getElementById('consent-banner').style.display = 'none';
         }
-    </script>
-
+      </script>
 
     <main>
 
