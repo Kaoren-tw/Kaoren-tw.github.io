@@ -1,200 +1,203 @@
 <!doctype html>
 <html lang="zh_TW">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
 
-        <title>高仁有限公司</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-        <!-- CSS FILES -->        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Sono:wght@200;300;400;500;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-icons.css">
-        <link rel="stylesheet" href="css/owl.carousel.min.css">
-        <link rel="stylesheet" href="css/owl.theme.default.min.css">
-        <link href="css/templatemo-pod-talk.css" rel="stylesheet">
+    <title>高仁有限公司</title>
 
-<!-- Google Tag Manager (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7B3P0XW0M"></script>
-<script>
-  // Initialize dataLayer and gtag function
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Sono:wght@200;300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link href="css/templatemo-pod-talk.css" rel="stylesheet">
 
-  // Set the default consent state to 'denied' for all types of storage
-  gtag('consent', 'default', {
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'analytics_storage': 'denied'
-  });
+    <!-- Google Tag Manager (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7B3P0XW0M"></script>
+    <script>
+        // Initialize dataLayer and gtag function
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        // Initialize Google Analytics after consent is granted
+        gtag('js', new Date());
+        gtag('config', 'G-H7B3P0XW0M');
 
-  // Initialize Google Analytics after consent is granted
-  gtag('js', new Date());
-  gtag('config', 'G-H7B3P0XW0M');
-</script>
+        // Set the default consent state to 'denied' for all types of storage
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
 
-<!-- Consent Banner Styles -->
-<style>
-  #consent-banner {
-    display: none;
-    position: fixed;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    z-index: 1000;
-  }
+    <!-- Consent Banner Styles -->
+    <style>
+        #consent-banner {
+            display: none;
+            position: fixed;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 1000;
+        }
 
-  #consent-banner button {
-    margin: 10px;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+        #consent-banner button {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-  #consent-banner button:hover {
-    background-color: #45a049;
-  }
-</style>
+        #consent-banner button:hover {
+            background-color: #45a049;
+        }
+    </style>
 
-    </head>
-    
-    <body>
+</head>
 
-<!-- Display consent banner -->
-  <div id="consent-banner">
-    <p>我們使用 Cookies 來提升您的使用體驗。請同意我們的隱私政策以繼續使用網站。</p>
-    <button onclick="consentGranted()">同意</button>
-    <button onclick="consentDenied()">不同意</button>
-  </div>
+<body>
 
-  <script>
-    // Display the consent banner if consent has not been given
-    window.onload = function () {
-      if (!localStorage.getItem('consentGiven')) {
-        // Show consent banner if not yet given
-        document.getElementById('consent-banner').style.display = 'block';
-      }
-    }
+    <!-- Display consent banner -->
+    <div id="consent-banner">
+        <p>我們使用 Cookies 來提升您的使用體驗。請同意我們的隱私政策以繼續使用網站。</p>
+        <button onclick="consentGranted()">同意</button>
+        <button onclick="consentDenied()">不同意</button>
+    </div>
 
-    // Function to handle consent granted
-    function consentGranted() {
-      // Update consent for all parameters as granted
-      gtag('consent', 'update', {
-        'ad_storage': 'granted',
-        'ad_user_data': 'granted',
-        'ad_personalization': 'granted',
-        'analytics_storage': 'granted'
-      });
+    <script>
+        // Display the consent banner if consent has not been given
+        window.onload = function () {
+            if (!localStorage.getItem('consentGiven')) {
+                // Show consent banner if not yet given
+                document.getElementById('consent-banner').style.display = 'block';
+            }
+        }
 
-      // Store the consent status
-      localStorage.setItem('consentGiven', 'true');
-      document.getElementById('consent-banner').style.display = 'none';
-    }
+        // Function to handle consent granted
+        function consentGranted() {
+            // Update consent for all parameters as granted
+            gtag('consent', 'update', {
+                'ad_storage': 'granted',
+                'ad_user_data': 'granted',
+                'ad_personalization': 'granted',
+                'analytics_storage': 'granted'
+            });
 
-    // Function to handle consent denied
-    function consentDenied() {
-      // Update consent for all parameters as denied
-      gtag('consent', 'update', {
-        'ad_storage': 'denied',
-        'analytics_storage': 'denied'
-      });
+            // Store the consent status
+            localStorage.setItem('consentGiven', 'true');
+            document.getElementById('consent-banner').style.display = 'none';
+        }
 
-      // Store the consent status
-      localStorage.setItem('consentGiven', 'false');
-      document.getElementById('consent-banner').style.display = 'none';
-    }
-  </script>
-        
-        
-        <main>
+        // Function to handle consent denied
+        function consentDenied() {
+            // Update consent for all parameters as denied
+            gtag('consent', 'update', {
+                'ad_storage': 'denied',
+                'analytics_storage': 'denied'
+            });
 
-            <nav class="navbar navbar-expand-lg">
-                <div class="container">
-                    <a class="navbar-brand me-lg-5 me-0" href="index.html">
-                        <img src="images/logo.png" class="logo-image img-fluid" alt="templatemo pod talk">
-                    </a>
+            // Store the consent status
+            localStorage.setItem('consentGiven', 'false');
+            document.getElementById('consent-banner').style.display = 'none';
+        }
+    </script>
 
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+
+    <main>
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand me-lg-5 me-0" href="index.html">
+                    <img src="images/logo.png" class="logo-image img-fluid" alt="templatemo pod talk">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-            
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-lg-auto">
-                            <li class="nav-item"> <!--Home-->
-                                <a class="nav-link active" style="color: blue;"href="index.html">Home</a>
-                            </li>
 
-                            <li class="nav-item"><!--關於高仁-->
-                                <a class="nav-link" style="color: blue;" href="about.html">關於高仁 About Kaoren</a>
-                            </li>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-lg-auto">
+                        <li class="nav-item"> <!--Home-->
+                            <a class="nav-link active" style="color: blue;" href="index.html">Home</a>
+                        </li>
 
-                            <li class="nav-item dropdown"><!--產品-->
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: blue;">產品 PRODUCT</a>
+                        <li class="nav-item"><!--關於高仁-->
+                            <a class="nav-link" style="color: blue;" href="about.html">關於高仁 About Kaoren</a>
+                        </li>
 
-                                <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
-                                    <li><a class="dropdown-item" style="color: blue;" href="error.html">氣泡布</a></li>
-                                    <li><a class="dropdown-item" style="color: blue;" href="error.html">EPE舒美布</a></li>
-                                    <li><a class="dropdown-item" style="color: blue;" href="error.html">防震袋</a></li>
-                                    <li><a class="dropdown-item" style="color: blue;" href="error.html">抗靜電</a></li>
-                                    <li><a class="dropdown-item" style="color: blue;" href="error.html">填塞包裝</a></li>
-                                    <li><a class="dropdown-item" style="color: blue;" href="error.html">破壞袋</a></li>                                   
-                                </ul>
-                            </li>
-    
-                            <li class="nav-item"><!--聯絡我們-->
-                                <a class="nav-link" style="color: blue;" href="error.html">聯絡我們 Contact</a>
-                            </li>
+                        <li class="nav-item dropdown"><!--產品-->
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false" style="color: blue;">產品 PRODUCT</a>
 
-                            <li class="nav-item"><!--LINE立即詢價-->
+                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                                <li><a class="dropdown-item" style="color: blue;" href="error.html">氣泡布</a></li>
+                                <li><a class="dropdown-item" style="color: blue;" href="error.html">EPE舒美布</a></li>
+                                <li><a class="dropdown-item" style="color: blue;" href="error.html">防震袋</a></li>
+                                <li><a class="dropdown-item" style="color: blue;" href="error.html">抗靜電</a></li>
+                                <li><a class="dropdown-item" style="color: blue;" href="error.html">填塞包裝</a></li>
+                                <li><a class="dropdown-item" style="color: blue;" href="error.html">破壞袋</a></li>
+                            </ul>
+                        </li>
 
-                                <a href="https://line.me/R/ti/p/%40126fydud" 
-                                class="btn custom-btn custom-border-btn smoothscroll" 
-                                style="color: white;
+                        <li class="nav-item"><!--聯絡我們-->
+                            <a class="nav-link" style="color: blue;" href="error.html">聯絡我們 Contact</a>
+                        </li>
+
+                        <li class="nav-item"><!--LINE立即詢價-->
+
+                            <a href="https://line.me/R/ti/p/%40126fydud"
+                                class="btn custom-btn custom-border-btn smoothscroll" style="color: white;
                                        background-color: rgb(13, 227, 59);
                                        border: 2px solid rgb(13, 227, 59);
                                        opacity: 1;">LINE 立即詢價</a>
-                            </li>
+                        </li>
 
-                        </ul>
-                    </div>
+                    </ul>
                 </div>
-            </nav>
-            
-  
-            <section class="hero-section"> <!--輪轉-->
-                <div class="container">
-                    <div class="row">
+            </div>
+        </nav>
 
-                        
-                        <div class="col-lg-12 col-12"> 
-                            <div class="text-center mb-5 pb-2">
-                                <h1 class="text-white">我們的產品</h1>
-                                <p class="text-white">Our Products</p>
-                            </div>
-                        
-                            <div class="owl-carousel owl-theme">
-                                <div class="owl-carousel-info-wrap item"> <!--1氣泡布-->
-                                    <img src="images/1.jpg" class="owl-carousel-image img-fluid" alt="">
 
-                                    <div class="owl-carousel-info">
-                                        <h4 class="mb-2">氣泡布</h4>
-                                        <span class="badge">LDPE</span>
-                                    </div>
+        <section class="hero-section"> <!--輪轉-->
+            <div class="container">
+                <div class="row">
 
-                                    <!--
+
+                    <div class="col-lg-12 col-12">
+                        <div class="text-center mb-5 pb-2">
+                            <h1 class="text-white">我們的產品</h1>
+                            <p class="text-white">Our Products</p>
+                        </div>
+
+                        <div class="owl-carousel owl-theme">
+                            <div class="owl-carousel-info-wrap item"> <!--1氣泡布-->
+                                <img src="images/1.jpg" class="owl-carousel-image img-fluid" alt="">
+
+                                <div class="owl-carousel-info">
+                                    <h4 class="mb-2">氣泡布</h4>
+                                    <span class="badge">LDPE</span>
+                                </div>
+
+                                <!--
                                     <div class="social-share">
                                         <ul class="social-icon">
                                             <li class="social-icon-item">
@@ -208,68 +211,68 @@
                                     </div>
                                     -->
 
+                            </div>
+
+                            <div class="owl-carousel-info-wrap item"><!--2EPE舒美布-->
+                                <img src="images/2.jpg" class="owl-carousel-image img-fluid" alt="">
+
+                                <div class="owl-carousel-info">
+                                    <h4 class="mb-2">EPE舒美布</h4>
+                                    <span class="badge">EPE</span>
+                                    <span class="badge">PE</span>
                                 </div>
+                            </div>
 
-                                <div class="owl-carousel-info-wrap item"><!--2EPE舒美布-->
-                                    <img src="images/2.jpg" class="owl-carousel-image img-fluid" alt="">
+                            <div class="owl-carousel-info-wrap item"><!--3防震袋-->
+                                <img src="images/3.jpg" class="owl-carousel-image img-fluid" alt="">
 
-                                    <div class="owl-carousel-info">
-                                        <h4 class="mb-2">EPE舒美布</h4>
-                                        <span class="badge">EPE</span>
-                                        <span class="badge">PE</span>
-                                    </div>
-                                </div>
-
-                                <div class="owl-carousel-info-wrap item"><!--3防震袋-->
-                                    <img src="images/3.jpg" class="owl-carousel-image img-fluid" alt="">
-
-                                    <div class="owl-carousel-info">
-                                        <h4 class="mb-2">防震袋</h4>
-                                        <span class="badge">LDPE</span>
-                                        <span class="badge">Kraft Paper</span>
-                                    </div>
-                                    
-                                </div>
-
-                                <div class="owl-carousel-info-wrap item"><!--4抗靜電-->
-                                    <img src="images/4.jpg" class="owl-carousel-image img-fluid" alt="">
-
-                                    <div class="owl-carousel-info">
-                                        <h4 class="mb-2">抗靜電</h4>
-                                        <span class="badge">LDPE</span>
-                                        <span class="badge">抗靜電粒</span>
-                                    </div>
-
-                                </div>
-
-                                <div class="owl-carousel-info-wrap item"><!--5填塞包裝-->
-                                    <img src="images/5.jpg" class="owl-carousel-image img-fluid" alt="">
-
-                                    <div class="owl-carousel-info">
-                                        <h4 class="mb-2">填塞包裝</h4>
-                                        <span class="badge">材料1</span>
-                                    </div>
-
-                                </div>
-
-                                <div class="owl-carousel-info-wrap item"><!--6破壞袋-->
-                                    <img src="images/2.jpg" class="owl-carousel-image img-fluid" alt="">
-
-                                    <div class="owl-carousel-info">
-                                        <h4 class="mb-2">破壞袋</h4>
-                                        <span class="badge">LDPE</span>
-                                        <span class="badge">材料2</span>
-                                    </div>
-
+                                <div class="owl-carousel-info">
+                                    <h4 class="mb-2">防震袋</h4>
+                                    <span class="badge">LDPE</span>
+                                    <span class="badge">Kraft Paper</span>
                                 </div>
 
                             </div>
+
+                            <div class="owl-carousel-info-wrap item"><!--4抗靜電-->
+                                <img src="images/4.jpg" class="owl-carousel-image img-fluid" alt="">
+
+                                <div class="owl-carousel-info">
+                                    <h4 class="mb-2">抗靜電</h4>
+                                    <span class="badge">LDPE</span>
+                                    <span class="badge">抗靜電粒</span>
+                                </div>
+
+                            </div>
+
+                            <div class="owl-carousel-info-wrap item"><!--5填塞包裝-->
+                                <img src="images/5.jpg" class="owl-carousel-image img-fluid" alt="">
+
+                                <div class="owl-carousel-info">
+                                    <h4 class="mb-2">填塞包裝</h4>
+                                    <span class="badge">材料1</span>
+                                </div>
+
+                            </div>
+
+                            <div class="owl-carousel-info-wrap item"><!--6破壞袋-->
+                                <img src="images/2.jpg" class="owl-carousel-image img-fluid" alt="">
+
+                                <div class="owl-carousel-info">
+                                    <h4 class="mb-2">破壞袋</h4>
+                                    <span class="badge">LDPE</span>
+                                    <span class="badge">材料2</span>
+                                </div>
+
+                            </div>
+
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-<!--
+        <!--
             <section class="topics-section section-padding pb-0" id="section_3">
                 <div class="container">
                     <div class="row">
@@ -357,7 +360,7 @@
             </section>
 -->
 
-<!--
+        <!--
             <section class="trending-podcast-section section-padding">
                 <div class="container">
                     <div class="row">
@@ -531,39 +534,41 @@
             </section>
 -->
 
-        </main>
-        
-        <footer class="site-footer">
-            <div class="container">
-                <div class="row">
+    </main>
 
-                
-                    <div class="col-lg-6 col-12 mb-5 mb-lg-0">
-                        <div class="subscribe-form-wrap">
-                            <h6>我要留言</h6>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
 
-                            <form class="custom-form subscribe-form" action="#" method="get" role="form">
-                                <input type="email" name="subscribe-email" id="subscribe-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email Address" required="">
 
-                                <div class="col-lg-12 col-12">
-                                    <button type="submit" class="form-control" id="submit">Subscribe</button>
-                                </div>
-                            </form>
-                        </div>
+                <div class="col-lg-6 col-12 mb-5 mb-lg-0">
+                    <div class="subscribe-form-wrap">
+                        <h6>我要留言</h6>
+
+                        <form class="custom-form subscribe-form" action="#" method="get" role="form">
+                            <input type="email" name="subscribe-email" id="subscribe-email" pattern="[^ @]*@[^ @]*"
+                                class="form-control" placeholder="Email Address" required="">
+
+                            <div class="col-lg-12 col-12">
+                                <button type="submit" class="form-control" id="submit">Subscribe</button>
+                            </div>
+                        </form>
                     </div>
-                
-                    
-                    <div class="col-lg-4 col-md-7 col-13 mb-5 mb-md-0 mb-lg-0">
+                </div>
 
-                        <h6 class="site-footer-title mb-3">聯絡我們 CONTACT</h6>
 
-                        <p class="mb-2"><strong class="d-inline me-2">廠址 ADDRESS:</strong> 高雄市小港區小港路57號</p>
-                        <p class="mb-2"><strong class="d-inline me-2">電話 TEL:</strong> 07-8010515</p>
-                        <p class="mb-2"><strong class="d-inline me-2">傳真 FAX:</strong> 07-8031700</p>
-                        <p class="mb-2"><strong class="d-inline me-2">統一編號 TAX:</strong> 50937910</p>
-                        <p class="mb-2"><strong class="d-inline me-2">電子信箱 E-MAIL:</strong><a href="mailto:sales@kaoren.com.tw">sales@kaoren.com.tw</a></p>
-                                                
-                    </div>
+                <div class="col-lg-4 col-md-7 col-13 mb-5 mb-md-0 mb-lg-0">
+
+                    <h6 class="site-footer-title mb-3">聯絡我們 CONTACT</h6>
+
+                    <p class="mb-2"><strong class="d-inline me-2">廠址 ADDRESS:</strong> 高雄市小港區小港路57號</p>
+                    <p class="mb-2"><strong class="d-inline me-2">電話 TEL:</strong> 07-8010515</p>
+                    <p class="mb-2"><strong class="d-inline me-2">傳真 FAX:</strong> 07-8031700</p>
+                    <p class="mb-2"><strong class="d-inline me-2">統一編號 TAX:</strong> 50937910</p>
+                    <p class="mb-2"><strong class="d-inline me-2">電子信箱 E-MAIL:</strong><a
+                            href="mailto:sales@kaoren.com.tw">sales@kaoren.com.tw</a></p>
+
+                </div>
 
                 <!--
                     <div class="col-lg-3 col-md-6 col-12">
@@ -587,16 +592,17 @@
                     </div>
                 -->
 
-                </div>
             </div>
-        </footer>
+        </div>
+    </footer>
 
 
-        <!-- JAVASCRIPT FILES -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/custom.js"></script>
-       
-    </body>
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/custom.js"></script>
+
+</body>
+
 </html>
