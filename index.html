@@ -18,81 +18,107 @@
         <link rel="stylesheet" href="css/owl.theme.default.min.css">
         <link href="css/templatemo-pod-talk.css" rel="stylesheet">
 
-<!-- Google Tag Manager 標籤 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7B3P0XW0M"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+<!-- Google Tag Manager (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7B3P0XW0M"></script>
+<script>
+  // Initialize dataLayer and gtag function
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
 
-        // 初始設置 Google 同意模式
-        function setConsentMode(consentStatus) {
-            if (consentStatus === 'granted') {
-                gtag('consent', 'update', {
-                    'ad_storage': 'granted',
-                    'analytics_storage': 'granted'
-                });
-            } else {
-                gtag('consent', 'update', {
-                    'ad_storage': 'denied',
-                    'analytics_storage': 'denied'
-                });
-            }
-        }
+  // Set the default consent state to 'denied' for all types of storage
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
 
-        // 檢查使用者是否已經同意
-        window.onload = function () {
-            if (!localStorage.getItem('consentGiven')) {
-                // 如果尚未同意，顯示同意視窗
-                document.getElementById('consent-banner').style.display = 'block';
-            }
-        }
-    </script>
-    <style>
-        /* 設置同意通知視窗的樣式 */
-        #consent-banner {
-            display: none;
-            position: fixed;
-            top: 70%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            /* 居中顯示 */
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            z-index: 1000;
-            /* 確保視窗位於其他內容之上 */
-        }
+  // Initialize Google Analytics after consent is granted
+  gtag('js', new Date());
+  gtag('config', 'G-H7B3P0XW0M');
+</script>
 
-        #consent-banner button {
-            margin: 10px;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            /* 綠色 */
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+<!-- Consent Banner Styles -->
+<style>
+  #consent-banner {
+    display: none;
+    position: fixed;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+  }
 
-        #consent-banner button:hover {
-            background-color: #45a049;
-        }
-    </style>
+  #consent-banner button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #consent-banner button:hover {
+    background-color: #45a049;
+  }
+</style>
 
     </head>
     
     <body>
-    <!-- 顯示同意聲明的浮動視窗 -->
-    <div id="consent-banner">
-        <p>我們使用 Cookies 來提升您的使用體驗。請同意我們的隱私政策以繼續使用網站。</p>
-        <button
-            onclick="setConsentMode('granted'); localStorage.setItem('consentGiven', 'true'); document.getElementById('consent-banner').style.display='none';">同意</button>
-        <button
-            onclick="setConsentMode('denied'); localStorage.setItem('consentGiven', 'false'); document.getElementById('consent-banner').style.display='none';">不同意</button>
-    </div>
+
+<!-- Display consent banner -->
+  <div id="consent-banner">
+    <p>我們使用 Cookies 來提升您的使用體驗。請同意我們的隱私政策以繼續使用網站。</p>
+    <button onclick="consentGranted()">同意</button>
+    <button onclick="consentDenied()">不同意</button>
+  </div>
+
+  <script>
+    // Display the consent banner if consent has not been given
+    window.onload = function () {
+      if (!localStorage.getItem('consentGiven')) {
+        // Show consent banner if not yet given
+        document.getElementById('consent-banner').style.display = 'block';
+      }
+    }
+
+    // Function to handle consent granted
+    function consentGranted() {
+      // Update consent for all parameters as granted
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted'
+      });
+
+      // Store the consent status
+      localStorage.setItem('consentGiven', 'true');
+      document.getElementById('consent-banner').style.display = 'none';
+    }
+
+    // Function to handle consent denied
+    function consentDenied() {
+      // Update consent for all parameters as denied
+      gtag('consent', 'update', {
+        'ad_storage': 'denied',
+        'analytics_storage': 'denied'
+      });
+
+      // Store the consent status
+      localStorage.setItem('consentGiven', 'false');
+      document.getElementById('consent-banner').style.display = 'none';
+    }
+  </script>
+        
+        
         <main>
 
             <nav class="navbar navbar-expand-lg">
